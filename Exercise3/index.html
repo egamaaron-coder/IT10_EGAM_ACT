@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A colorful gallery of favorite foods.">
+  <title>Exercise 3 </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+
+    <section class="food-grid" aria-label="Food gallery">
+      <article class="food-card">
+        <header class="card-header">
+          <h2>Item 1</h2>
+          <button class="remove-button" type="button" aria-label="Remove Burger card">×</button>
+        </header>
+        <div class="card-content">
+          <img src="burger.jpg" alt="Cheeseburger with lettuce, tomato, pickles, and cheese">
+          <div class="item-details">
+            <h3>Burger</h3>
+            <p class="rating">4.9 / 5</p>
+          </div>
+          <div class="item-info">
+            <h4>Description:</h4>
+            <p>A juicy beef patty topped with melted cheese, crisp lettuce, ripe tomato, and tangy house sauce, served on a toasted bun.</p>
+            <h4>Ingredients:</h4>
+            <ul><li>Burger bun</li><li>Beef patty</li><li>Cheese</li><li>Lettuce</li><li>Tomato slices</li><li>House sauce</li></ul>
+            <button class="cart-button" type="button">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <header class="card-header">
+          <h2>Item 2</h2>
+          <button class="remove-button" type="button" aria-label="Remove Taco card">×</button>
+        </header>
+        <div class="card-content">
+          <img src="taco.jpg" alt="Tacos filled with meat, vegetables, and herbs">
+          <div class="item-details">
+            <h3>French Fries</h3>
+            <p class="rating">4.9 / 5</p>
+          </div>
+          <div class="item-info">
+            <h4>Description:</h4>
+            <p>Crispy golden potato fries, lightly salted and served hot.</p>
+            <h4>Ingredients:</h4>
+            <ul><li>Potatoes</li><li>Vegetable oil</li><li>Salt</li></ul>
+            <button class="cart-button" type="button">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <header class="card-header">
+          <h2>Item 3</h2>
+          <button class="remove-button" type="button" aria-label="Remove Bulalo card">×</button>
+        </header>
+        <div class="card-content">
+          <img src="bulalo.jpg" alt="A bowl of Filipino bulalo soup with corn and vegetables">
+          <div class="item-details">
+            <h3>Beef Bulalo</h3>
+            <p class="rating">4.9 / 5</p>
+          </div>
+          <div class="item-info">
+            <h4>Description:</h4>
+            <p>A Filipino beef soup slow-simmered until tender, with rich bone marrow, corn, and vegetables.</p>
+            <h4>Ingredients:</h4>
+            <ul><li>Beef shank and bone marrow</li><li>Corn</li><li>Cabbage</li><li>Pechay</li><li>Onion</li></ul>
+            <button class="cart-button" type="button">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.remove-button').forEach((button) => {
+      button.addEventListener('click', () => button.closest('.food-card').remove());
+    });
+  </script>
+</body>
+</html>
