@@ -1,15 +1,3 @@
-:root {
-  color-scheme: light;
-  --page-blue: #b9c7f5;
-  --primary-blue: #123ee8;
-  --deep-blue: #173fb8;
-  --border-blue: #526cbd;
-  --text: #202b43;
-  --muted: #65718a;
-  --remove: #d83d62;
-  --white: #edf0ff;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -18,32 +6,33 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 56px 24px;
-  background: var(--page-blue);
-  color: var(--text);
+  background-color: #b9c7f5;
+  color: #202b43;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .page {
-  width: min(100%, 1600px);
+  width: 100%;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
 h1 {
   margin: 0;
-  color: var(--deep-blue);
-  font-size: clamp(28px, 4vw, 40px);
+  color: #173fb8;
+  font-size: 40px;
   text-align: center;
 }
 
 .page-intro {
   margin: 8px 0 36px;
-  color: var(--muted);
+  color: #65718a;
   text-align: center;
 }
 
 .food-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
 
@@ -51,10 +40,10 @@ h1 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid var(--border-blue);
+  border: 1px solid #526cbd;
   border-radius: 10px;
-  background: var(--page-blue);
-  box-shadow: 0 8px 22px rgb(36 87 223 / 10%);
+  background-color: #b9c7f5;
+  box-shadow: 0 8px 22px rgba(36, 87, 223, 0.1);
 }
 
 .card-header {
@@ -63,8 +52,8 @@ h1 {
   padding: 10px 15px 10px 20px;
   align-items: center;
   justify-content: space-between;
-  background: var(--primary-blue);
-  color: var(--white);
+  background-color: #123ee8;
+  color: #edf0ff;
 }
 
 .card-header h2 {
@@ -74,30 +63,30 @@ h1 {
 }
 
 .remove-button {
-  display: grid;
+  display: flex;
   width: 34px;
   height: 34px;
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: var(--remove);
-  color: var(--white);
+  background-color: #d83d62;
+  color: #edf0ff;
   cursor: pointer;
   font-size: 23px;
   line-height: 1;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   transition: background-color 150ms ease, transform 150ms ease;
 }
 
 .remove-button:hover {
-  background: #b82d4e;
+  background-color: #b82d4e;
   transform: scale(1.06);
 }
 
-.remove-button:focus-visible {
-  outline: 3px solid var(--white);
+.remove-button:focus {
+  outline: 3px solid #edf0ff;
   outline-offset: 2px;
-  box-shadow: 0 0 0 5px var(--deep-blue);
 }
 
 .card-content {
@@ -112,7 +101,7 @@ h1 {
   width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 5px;
-  background: var(--primary-blue);
+  background-color: #123ee8;
   object-fit: cover;
 }
 
@@ -126,13 +115,13 @@ h1 {
 
 .item-details h3 {
   margin: 0;
-  color: var(--deep-blue);
+  color: #173fb8;
   font-size: 18px;
 }
 
 .rating {
   margin: 0;
-  color: var(--muted);
+  color: #65718a;
   font-size: 15px;
   font-weight: 600;
   white-space: nowrap;
@@ -143,14 +132,14 @@ h1 {
   flex: 1;
   flex-direction: column;
   margin: 20px 4px 4px;
-  color: var(--text);
+  color: #202b43;
   font-size: 14px;
   line-height: 1.65;
 }
 
 .item-info h4 {
   margin: 0 0 8px;
-  color: var(--muted);
+  color: #65718a;
   font-size: 13px;
   font-weight: 600;
 }
@@ -175,14 +164,13 @@ h1 {
 }
 
 .cart-button {
-  display: block;
   width: 100%;
   margin-top: auto;
   padding: 13px 16px;
   border: 0;
   border-radius: 5px;
-  background: var(--primary-blue);
-  color: var(--white);
+  background-color: #123ee8;
+  color: #edf0ff;
   cursor: pointer;
   font: inherit;
   font-weight: 600;
@@ -190,17 +178,17 @@ h1 {
 }
 
 .cart-button:hover {
-  background: var(--deep-blue);
+  background-color: #173fb8;
 }
 
-.cart-button:focus-visible {
-  outline: 3px solid var(--deep-blue);
+.cart-button:focus {
+  outline: 3px solid #173fb8;
   outline-offset: 3px;
 }
 
 @media (max-width: 760px) {
   .food-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -216,14 +204,5 @@ h1 {
 
   .page-intro {
     margin-bottom: 26px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
   }
 }

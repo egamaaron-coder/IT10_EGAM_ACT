@@ -1,14 +1,3 @@
-:root {
-  color-scheme: light;
-  --muted: #061813;
-  --paper: #a4cfa4;
-  --surface: #b7ccca;
-  --line: #dce4df;
-  --accent: #176b5b;
-  --accent-dark: #161817;
-  --accent-soft: #a5b1a5;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -17,26 +6,22 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 48px 20px;
-  background-color: var(--paper);
-  background-image: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 31px,
-    rgba(122, 179, 166, 0.03) 32px
-  );
+  background-color: #a4cfa4;
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(122, 179, 166, 0.03) 32px);
   font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
   font-size: 17px;
   line-height: 1.75;
 }
 
 .container {
-  width: min(100%, 720px);
+  width: 100%;
+  max-width: 720px;
   margin: 24px auto;
   padding: 44px 52px;
-  border: 1px solid var(--line);
-  border-top: 4px solid var(--accent);
+  border: 1px solid #dce4df;
+  border-top: 4px solid #176b5b;
   border-radius: 8px;
-  background-color: var(--surface);
+  background-color: #b7ccca;
   box-shadow: 0 18px 48px rgba(90, 129, 121, 0.08);
 }
 
@@ -63,18 +48,17 @@ h2 {
 .box {
   margin-top: 32px;
   padding: 28px 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid #dce4df;
 }
 
 .bio {
   margin: 18px 0 24px;
-  color: var(--muted);
+  color: #061813;
   text-align: left;
 }
 
 ul {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
   gap: 12px;
   margin: 0;
   padding: 0;
@@ -82,18 +66,19 @@ ul {
 }
 
 li {
+  flex: 1;
   padding: 10px 12px;
-  border: 1px solid var(--line);
+  border: 1px solid #dce4df;
   border-radius: 6px;
-  background: var(--accent-soft);
-  color: var(--accent-dark);
+  background-color: #a5b1a5;
+  color: #161817;
   font-size: 15px;
   text-align: center;
 }
 
 footer {
   padding-top: 24px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid #dce4df;
   text-align: center;
 }
 
@@ -105,25 +90,19 @@ footer h2 {
   display: inline-block;
   margin: 4px;
   padding: 8px 16px;
-  border: 1px solid var(--accent);
+  border: 1px solid #176b5b;
   border-radius: 5px;
-  background-color: var(--accent);
+  background-color: #176b5b;
   color: #f3f2f2;
   font-size: 15px;
   line-height: 1.5;
   text-decoration: none;
-  transition: background-color 160ms ease, color 160ms ease;
 }
 
 .btn:hover,
-.btn:focus-visible {
-  background-color: var(--accent-dark);
-  color: #fff;
-}
-
-.btn:focus-visible {
-  outline: 3px solid rgba(177, 206, 201, 0.28);
-  outline-offset: 3px;
+.btn:focus {
+  background-color: #161817;
+  color: white;
 }
 
 .btn-facebook:hover {
@@ -153,8 +132,7 @@ footer h2 {
   }
 
   ul {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 8px;
   }
 }
-

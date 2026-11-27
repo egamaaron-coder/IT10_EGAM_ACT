@@ -77,9 +77,12 @@
   </main>
 
   <script>
-    document.querySelectorAll('.remove-button').forEach((button) => {
-      button.addEventListener('click', () => button.closest('.food-card').remove());
-    });
+    var buttons = document.getElementsByClassName("remove-button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].onclick = function () {
+        this.parentNode.parentNode.remove();
+      };
+    }
   </script>
 </body>
 </html>
